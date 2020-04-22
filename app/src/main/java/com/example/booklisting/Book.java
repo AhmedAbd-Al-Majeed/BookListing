@@ -6,17 +6,17 @@ public class Book {
     private String mBookId;
     private String mSelfLink;
 
-    public Book(String bookName, String bookId, String selfLink){
+    public Book(String bookName, String bookId, String selfLink) {
         mBookName = bookName;
         mBookId = bookId;
         mSelfLink = selfLink;
     }
 
-    public String getBookName(){
+    public String getBookName() {
         return mBookName;
     }
 
-    public String getBookId(){
+    public String getBookId() {
         return mBookId;
     }
 

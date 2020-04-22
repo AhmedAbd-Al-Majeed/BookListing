@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -23,16 +24,17 @@ public class BookAdapter extends ArrayAdapter<Book> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         View listItemView = convertView;
-        if (listItemView == null){
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
         Book currentBook = getItem(position);
-        TextView nameTextView =(TextView) listItemView.findViewById(R.id.title);
+        TextView nameTextView = (TextView) listItemView.findViewById(R.id.title);
         nameTextView.setText(currentBook.getBookName());
 
-        TextView idTextView =(TextView) listItemView.findViewById(R.id.name_id);
+        TextView idTextView = (TextView) listItemView.findViewById(R.id.name_id);
         idTextView.setText(currentBook.getBookId());
+
 
         return listItemView;
 

@@ -2,8 +2,12 @@ package com.example.booklisting;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.content.Loader;
+import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
@@ -16,7 +20,7 @@ public class BookLoader extends AsyncTaskLoader<List<Book>> {
      */
     private String mUrl;
 
-    public BookLoader(Context context, String url){
+    public BookLoader(Context context, String url) {
         super(context);
         mUrl = url;
     }
@@ -31,11 +35,13 @@ public class BookLoader extends AsyncTaskLoader<List<Book>> {
     @Override
     public List<Book> loadInBackground() {
         Log.i(LOG_TAG, "TEST: loadInBackground() ....");
-        if(mUrl==null){
-        return null;
+        if (mUrl == null) {
+            return null;
         }
         // Perform the network request, parse the response, and extract a list of books.
         List<Book> books = QueryUtils.fetchBookData(mUrl);
         return books;
     }
+
+
 }
