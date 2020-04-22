@@ -48,7 +48,7 @@ public final class QueryUtils {
     }
 
     // create url object
-    private static URL createUrl(String stringUrl) {
+    public static URL createUrl(String stringUrl) {
         URL url = null;
         try {
             url = new URL(stringUrl);
@@ -141,20 +141,28 @@ public final class QueryUtils {
             for (int i = 0; i < itemsArray.length(); i++) {
                 // Get a single book at position i within the list of books
                 JSONObject currentBook = itemsArray.getJSONObject(i);
+                // Extract the value for the key called "publisher"
+                String id = currentBook.getString("id");
                 // For a given book, extract the JSONObject associated with the
                 // key called "volumeInfo", which represents a list of all properties
                 // for that book.
                 JSONObject volumeInfo = currentBook.getJSONObject("volumeInfo");
+                // For a given book, extract the JSONObject associated with the
+                // key called "imageLinks", which represents a list of all properties
+                // for that book.
+                JSONObject imageLinks = volumeInfo.getJSONObject("imageLinks");
+                // Extract the value for the key called "thumbnail"
+                String thumbnail = imageLinks.getString("thumbnail");
+
                 // Extract the value for the key called "title"
                 String title = volumeInfo.getString("title");
-                // Extract the value for the key called "publisher"
-                String id = currentBook.getString("id");
+
                 // Extract the value for the key called "selfLink"
                 String selfLink = currentBook.getString("selfLink");
 
                 // Create a new {@link Book} object with the title, publisher
                 //from the JSON response.
-                Book book = new Book(title, id, selfLink);
+                Book book = new Book(title, id, selfLink, thumbnail);
                 // Add the new {@link Book} to the list of earthquakes.
                 books.add(book);
             }

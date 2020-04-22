@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:drawSelectorOnTop="true"
-    tools:context="com.example.booklisting.MainActivity"
-    >
+    android:orientation="horizontal"
+    tools:context="com.example.booklisting.MainActivity">
 
-    <TextView
-        android:id="@+id/name_id"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/book_thumbnail"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="id"
-        android:maxLines="1"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="@color/textColorBookDetails"/>
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="title"
-        android:textColor="@android:color/black"
-        android:maxLines="1"
-        android:fontFamily="sans-serif-medium"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textColor="@color/textColorBookDetails"
+            tools:text="id" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            tools:text="title" />
+
+    </LinearLayout>
 </LinearLayout>
