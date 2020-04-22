@@ -28,7 +28,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
                     R.layout.list_item, parent, false);
         }
         Book currentBook = getItem(position);
-        TextView nameTextView =(TextView) listItemView.findViewById(R.id.name);
+        TextView nameTextView =(TextView) listItemView.findViewById(R.id.title);
         nameTextView.setText(currentBook.getBookName());
 
         TextView idTextView =(TextView) listItemView.findViewById(R.id.name_id);

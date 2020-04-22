@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/search_book"
-        android:hint="@string/edit_text_hint"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text_hint"
         android:inputType="text"/>
 
     <Button
@@ -19,13 +20,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_button"/>
-
+    <RelativeLayout android:id="@+id/LinearLayoutAR"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
     <ListView
         android:id="@+id/list"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@null"
         android:drawSelectorOnTop="true"
-        tools:context="com.example.booklisting.MainActivity"/>
+        android:dividerHeight="0dp"
+        android:orientation="vertical"
+        />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent ="true" />
+
+        <!-- Here is the view to show if the list is emtpy -->
+        <TextView android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/no_books"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_centerInParent ="true"
+            />
+    </RelativeLayout>
 
 </LinearLayout>

@@ -4,10 +4,12 @@ public class Book {
 
     private String mBookName;
     private String mBookId;
+    private String mSelfLink;
 
-    public Book(String bookName, String bookId){
+    public Book(String bookName, String bookId, String selfLink){
         mBookName = bookName;
         mBookId = bookId;
+        mSelfLink = selfLink;
     }
 
     public String getBookName(){
@@ -18,4 +20,7 @@ public class Book {
         return mBookId;
     }
 
+    public String getSelfLink() {
+        return mSelfLink;
+    }
 }

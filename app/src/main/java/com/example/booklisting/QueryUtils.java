@@ -31,6 +31,7 @@ public final class QueryUtils {
     }
 
     public static List<Book> fetchBookData(String requestUrl) {
+        Log.i(LOG_TAG, "TEST: fetchBookData() ....");
         // create url object
         URL url = createUrl(requestUrl);
         // perform HTTP request to the url and receive a JSON response back
@@ -138,7 +139,7 @@ public final class QueryUtils {
             // For each book in the bookArray, create an {@link Earthquake} object
 
             for (int i = 0; i < itemsArray.length(); i++) {
-                // Get a single book at position i within the list of earthquakes
+                // Get a single book at position i within the list of books
                 JSONObject currentBook = itemsArray.getJSONObject(i);
                 // For a given book, extract the JSONObject associated with the
                 // key called "volumeInfo", which represents a list of all properties
@@ -147,10 +148,13 @@ public final class QueryUtils {
                 // Extract the value for the key called "title"
                 String title = volumeInfo.getString("title");
                 // Extract the value for the key called "publisher"
-                String publisher = volumeInfo.getString("publisher");
+                String id = currentBook.getString("id");
+                // Extract the value for the key called "selfLink"
+                String selfLink = currentBook.getString("selfLink");
+
                 // Create a new {@link Book} object with the title, publisher
                 //from the JSON response.
-                Book book = new Book(title, publisher);
+                Book book = new Book(title, id, selfLink);
                 // Add the new {@link Book} to the list of earthquakes.
                 books.add(book);
             }

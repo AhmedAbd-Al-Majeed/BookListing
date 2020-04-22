@@ -9,13 +9,19 @@
     >
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="TextView1" />
-    <TextView
         android:id="@+id/name_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="TextView" />
+        tools:text="id"
+        android:maxLines="1"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/textColorBookDetails"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="title"
+        android:textColor="@android:color/black"
+        android:maxLines="1"
+        android:fontFamily="sans-serif-medium"/>
 </LinearLayout>
