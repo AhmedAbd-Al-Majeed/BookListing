@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:orientation="vertical"
+    android:layout_centerInParent="true"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,12 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edit_text_hint"
-        android:inputType="text"/>
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="32dp"
+        android:gravity="center"
+        android:inputType="text"
+        android:autofillHints="book"
+        />
 
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/search_book"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/search_button"/>
 
-</LinearLayout>
+</RelativeLayout>

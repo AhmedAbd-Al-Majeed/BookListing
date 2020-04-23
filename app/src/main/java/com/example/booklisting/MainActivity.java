@@ -2,13 +2,10 @@ package com.example.booklisting;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Loader;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
